@@ -90,13 +90,27 @@ For More information on modules, [click here](https://docs.ansible.com/ansible/l
 
     **Static Inventory example**
 
-    [![staticinventoryexample.png](https://i.postimg.cc/pdNtRZQL/staticinventoryexample.png)](https://postimg.cc/pmBSBK1w)
+    ```properties
+    [control]
+    control ansible_host=10.42.0.2
 
+    [web]
+    node-1 ansible_host=10.42.0.6
+    node-2 ansible_host=10.42.0.7
+    node-3 ansible_host=10.42.0.8
+
+    [haproxy]
+    haproxy ansible_host=10.42.0.100
+
+    [all:vars]
+    ansible_user=vagrant
+    ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+    ```
 2. Variables
    
    Ansible can work with metadata from various sources and manage their context in the form of variables.
 
-   ** Variable precedence **
+   **Variable precedence**
 
    1. Extra vars
    2. Tasks vars (only for task)
@@ -132,22 +146,65 @@ For More information on modules, [click here](https://docs.ansible.com/ansible/l
     ```yaml
     tasks:
         - name: add cache dir
-         file: 
+          file: 
             path: /opt/cache
             state: directory
 
         - name: install nginix
-         service: 
+          service: 
             name: nginx
             state: restarted
         
     ```
 
-    Normal tasks as shown above runs sequentially however ***Handler Tasks***, runs on notification. 
+    Normal tasks as shown above runs sequentially however ***Handler Tasks***, runs on notification. Handlers are special tasks that run at the end of a play if notified by another task. If a configuration file gets changed notify a service restart task it needs to run. 
 
+    Example handler:
 
+     ```yaml
+    tasks:
+        - name: add cache dir
+          file: 
+            path: /opt/cache
+            state: directory
+        - name: install nginix
+          yum: 
+            name: nginx
+            state: latest
+            notify: restart nginx
+    
+    handlers
+        - name: restart nginix
+          service: 
+            name: nginx
+            state: restarted
+    ```
 
----
+4. Plays and Playbooks
+
+    Plays are ordered set of tasks to execute against host selections from your inventory. A playbook is a file containing one or more plays.
+
+    **Playbook example**
+
+    ```yaml
+    - name : install and start apache
+      hosts: web
+      vars:
+        http_port: 80
+        max_clients: 200
+      remote_user: root
+
+      tasks:
+      - name: install httpd
+        yum: pkg=httpd state=latest
+      - name: write the apache config file
+        template: src=/srv/httpd.j2 dest=/etc/httpd.conf
+      - name: start httpd
+        service: name=httpd state=started
+      
+    ```
+[Click here]() for more example playbooks.
+
 
 ## Installing Ansible
 
@@ -163,8 +220,6 @@ $ sudo apt-get install ansible
 ```
 
 > Note: Ansible can only manage Windows hosts. Ansible cannot run on a Windows host natively, though it can run under the [Windows Subsystem for Linux (WSL)](https://www.youtube.com/watch?v=vE5unuqIauE "WSL"). The Windows Subsystem for Linux is not supported by Ansible and should not be used for production systems. 
-
----
 
 ## AD - HOC Commands
 
