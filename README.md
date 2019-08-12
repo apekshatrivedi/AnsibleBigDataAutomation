@@ -88,9 +88,9 @@ For More information on modules, [click here](https://docs.ansible.com/ansible/l
     * Inventory-specific data or variables.
     * Static or dynamic source.
 
-Static Inventory example
+    **Static Inventory example**
 
-[![staticinventoryexample.png](https://i.postimg.cc/pdNtRZQL/staticinventoryexample.png)](https://postimg.cc/pmBSBK1w)
+    [![staticinventoryexample.png](https://i.postimg.cc/pdNtRZQL/staticinventoryexample.png)](https://postimg.cc/pmBSBK1w)
 
 ---
 
@@ -106,9 +106,8 @@ $ sudo yum install ansible
 # you will need the PPA repo configured
 $ sudo apt-get install ansible 
 ```
-We will be using the pip install method. 
 
-> Note: To install python and pip on Windows10, [click here](https://github.com/apekshatrivedi/AnsibleBigDataAutomation/blob/AnsibleBasics/Python_and_pip_install_on_Windows10.md "Installing python and pip on Windows 10")
+> Note: Ansible can only manage Windows hosts. Ansible cannot run on a Windows host natively, though it can run under the [Windows Subsystem for Linux (WSL)](https://www.youtube.com/watch?v=vE5unuqIauE "WSL"). The Windows Subsystem for Linux is not supported by Ansible and should not be used for production systems. 
 
 ---
 
