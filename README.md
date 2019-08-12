@@ -203,8 +203,13 @@ For More information on modules, [click here](https://docs.ansible.com/ansible/l
         service: name=httpd state=started
       
     ```
-[Click here]() for more example playbooks.
+[Click here](https://github.com/apekshatrivedi/AnsibleBigDataAutomation/blob/AnsibleBasics/Example1/site.yaml "Example1") for more example playbook.
 
+5. Roles
+
+    Roles are a package of closely related Ansible content that can be shared more easily than plays alone.
+
+    
 
 ## Installing Ansible
 

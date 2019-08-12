@@ -53,7 +53,7 @@ ansible webservers -i hosts -u vagrant -m yum -a "name=httpd state=absent" -b
 ```
 ## 5. Running the ansible playbook
 
-Will run the [said]() playbook.
+Will run the [said](https://github.com/apekshatrivedi/AnsibleBigDataAutomation/blob/AnsibleBasics/Example1/site.yaml "Example1") playbook.
 
 ```bash
 ansible-playbook -i hosts site.yaml
