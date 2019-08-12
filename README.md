@@ -72,7 +72,9 @@ $ sudo yum install ansible
 # you will need the PPA repo configured
 $ sudo apt-get install ansible 
 ```
+We will be using the pip install method. 
 
+> Note: To install python and pip on Windows10, [click here](https://github.com/apekshatrivedi/AnsibleBigDataAutomation/blob/AnsibleBasics/Python_and_pip_install_on_Windows10.md "Installing python and pip on Windows 10")
 
    
 
