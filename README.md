@@ -12,25 +12,67 @@ Ansible Tower is a framework for controlling,securing and managing ansible autom
 
 ## Why Ansible ?
 
-### 1. *It is simple.*
+#### 1. It is simple.
+
 * Human readable automation. 
 * No special coding skills required.
 * Tasks are executed in order.
 * Get productivity quicker.
 
-### 2. *It is powerful.*
+#### 2. It is powerful.
 
 * Application deployment.
 * Configuration Management.
 * Workflow orchestration.
 * Orchestrate the application lifecycle.
 
-### 3. *It is agentless.*
+#### 3. It is agentless.
 
-* Agentless architecture
-* Uses OpenSSH and WinRM
-* No agents to exploit or Update
-* More efficient and secure
+* Agentless architecture.
+* Uses OpenSSH and WinRM.
+* No agents to exploit or update.
+* More efficient and secure.
+
+#### 4. It is cross platform.
+
+* Agentless support for all major OS, varients, physical, virtual, cloud and network.
+
+#### 5. It works with existing toolkits
+
+* Homogenize existing environments by leveraging current toolsets and update mechanisms. 
+
+#### 6. It comes bundled with 450+ modules
+
+* Cloud
+* Container
+* Database
+* Files
+* Messaging
+* Monitoring
+* Network
+* Notifications
+* Packaging
+* Source Control
+* System
+* Testing
+* Utilities
+* Web Infrastructure
+
+---
+
+## Installing Ansible
+
+```bash
+# the most common and preferred way of installation
+$ pip install ansible
+
+# install the epel-release RPM if needed on CentOS , RHEL or Scientific Linux
+$ sudo yum install ansible
+
+# you will need the PPA repo configured
+$ sudo apt-get install ansible 
+```
+
 
    
 
