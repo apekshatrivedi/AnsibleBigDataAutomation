@@ -58,6 +58,40 @@ Ansible Tower is a framework for controlling,securing and managing ansible autom
 * Utilities
 * Web Infrastructure
 
+##### Commonly used modules
+* apt/yum
+* copy
+* file
+* get_url
+* git
+* ping
+* debug
+* service
+* synchronize
+* template
+* url
+* user
+* wait_for
+* assert
+
+
+For More information on modules, [click here](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html "doc.ansible.com")
+
+## Ansible Essentials
+
+1. Inventory
+
+    Inventory is a collection of hosts (nodes) against which the Ansible can work with. These includes: 
+
+    * Hosts.
+    * Groups sources.
+    * Inventory-specific data or variables.
+    * Static or dynamic source.
+
+Static Inventory example
+
+[![staticinventoryexample.png](https://i.postimg.cc/pdNtRZQL/staticinventoryexample.png)](https://postimg.cc/pmBSBK1w)
+
 ---
 
 ## Installing Ansible
@@ -76,6 +110,27 @@ We will be using the pip install method.
 
 > Note: To install python and pip on Windows10, [click here](https://github.com/apekshatrivedi/AnsibleBigDataAutomation/blob/AnsibleBasics/Python_and_pip_install_on_Windows10.md "Installing python and pip on Windows 10")
 
-   
+---
+
+## AD - HOC Commands
+
+```bash
+# check all my inventory hosts are ready to be manged by Ansible
+$ ansible all -m ping
+
+# run the uptime command on all hosts in the web group
+$ ansible web -m command -a "uptime"
+
+# collect and display the discovered for the localhost
+$ ansible localhost -m setup
+```
+
+The last command will yield the following results.
+
+[![discovered.png](https://i.postimg.cc/nrpKq6vw/discovered.png)](https://postimg.cc/ftq0Nqqx)
+
+## References
+
+1. Introduction to Ansible tutorial: [https://www.ansible.com/resources/webinars-training/introduction-to-ansible](https://www.ansible.com/resources/webinars-training/introduction-to-ansible "Introduction-to-ansible")
 
 
