@@ -128,6 +128,8 @@ The last command will yield the following results.
 
 [![discovered.png](https://i.postimg.cc/nrpKq6vw/discovered.png)](https://postimg.cc/ftq0Nqqx)
 
+More ad-hoc commands are found [here](https://github.com/apekshatrivedi/AnsibleBigDataAutomation/blob/AnsibleBasics/ad-hoc_commands.md "ad-hoc commands")
+
 ## References
 
 1. Introduction to Ansible tutorial: [https://www.ansible.com/resources/webinars-training/introduction-to-ansible](https://www.ansible.com/resources/webinars-training/introduction-to-ansible "Introduction-to-ansible")
