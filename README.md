@@ -92,6 +92,61 @@ For More information on modules, [click here](https://docs.ansible.com/ansible/l
 
     [![staticinventoryexample.png](https://i.postimg.cc/pdNtRZQL/staticinventoryexample.png)](https://postimg.cc/pmBSBK1w)
 
+2. Variables
+   
+   Ansible can work with metadata from various sources and manage their context in the form of variables.
+
+   ** Variable precedence **
+
+   1. Extra vars
+   2. Tasks vars (only for task)
+   3. Block vars(only for tasks in the blocks)
+   4. Role and include vars vars_files
+   5. Play vars_files
+   6. Play vars_prompt
+   7. Play vars
+   8. Set_facts
+   9. Registered vars
+   10. Host facts
+   11. Playbook host_vars
+   12. Playbook group_vars
+   13. Inventory host_vars
+   14. Inventory group_vars
+   15. Inventory vars
+   16. Role defaults
+   
+3. Tasks
+   
+   What a module does, It consists of arguments we pass to the module.
+
+   Some examples:
+   1. `file` : A directory should exist.
+   2. `yum` : A package should be installed.
+   3. `service` : A service should be running.
+   4. `template` : Render a config file from a template.
+   5. `get_url` : Fetch an archive file from a URL.
+   6. `git` : Clone a source code repository.
+
+    __Example tasks in a play__
+
+    ```yaml
+    tasks:
+        - name: add cache dir
+         file: 
+            path: /opt/cache
+            state: directory
+
+        - name: install nginix
+         service: 
+            name: nginx
+            state: restarted
+        
+    ```
+
+    Normal tasks as shown above runs sequentially however ***Handler Tasks***, runs on notification. 
+
+
+
 ---
 
 ## Installing Ansible
