@@ -219,9 +219,7 @@ For More information on modules, [click here](https://docs.ansible.com/ansible/l
     ```
     Command to view create an ansible role structure
     `ansible-galaxy init rolename`
-
-    
-    
+       
     By creating the roles directory structure ansible can identify if the YAMLS are tasks or handlers.
 
 ## Installing Ansible
