@@ -1,0 +1,33 @@
+---
+
+#host_key_checking = False
+
+- name: Install hadoop master node
+  hosts: hadoop-master
+  remote_user: vagrant
+  sudo: yes
+
+  roles:
+    - common
+    - openjdk8
+    # - oraclejava8
+    - master
+
+- name: Install hadoop data nodes
+  hosts: hadoop-data
+  remote_user: vagrant
+  sudo: yes
+
+  roles:
+    - common
+    - openjdk8
+    # - oraclejava8
+
+# - name: Format namenode
+#   hosts: hadoop-master
+#   become_user: hadoop
+#   tasks:
+
+#      - name: Copy and Execute the script 
+#        script: start-hadoop.sh
+
