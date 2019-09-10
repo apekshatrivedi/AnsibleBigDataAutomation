@@ -23,11 +23,3 @@
     - openjdk8
     # - oraclejava8
 
-# - name: Format namenode
-#   hosts: hadoop-master
-#   become_user: hadoop
-#   tasks:
-
-#      - name: Copy and Execute the script 
-#        script: start-hadoop.sh
-
